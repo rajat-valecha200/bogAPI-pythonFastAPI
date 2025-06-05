@@ -71,7 +71,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ### 4. Run the App
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ### 5. API Docs
