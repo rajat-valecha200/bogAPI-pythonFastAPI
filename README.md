@@ -1,5 +1,4 @@
-﻿Here you go, Rajat — a complete README.md and Postman API collection with sample data setup. You’ll also get some JSON for seeding.
-# 📝 Blog API – FastAPI + PostgreSQL + JWT Auth
+﻿# 📝 Blog API – FastAPI + PostgreSQL + JWT Auth
 
 A simple blog backend with user registration/login, JWT authentication, and CRUD operations for blog posts, including file uploads.
 
