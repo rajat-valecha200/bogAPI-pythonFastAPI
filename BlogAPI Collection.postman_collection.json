@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "d039d7e2-f6b4-4622-8db1-771ae44344b9",
+		"name": "BlogAPI Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35194811"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"testuser@example.com\",\n  \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "testuser@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"First Post\",\n  \"content\": \"This is my first post.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Post\",\n  \"content\": \"Updated content.\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer YOUR_ACCESS_TOKEN"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "C:/Users/rajat/Pictures/sample.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/upload-image/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"upload-image",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location --request POST 'http://localhost:8000/upload-image/' \\\r\n--header 'Authorization: Bearer YOUR_ACCESS_TOKEN' \\\r\n--form 'file=@\"C:/Users/rajat/Pictures/sample.jpg\"'\r\n"
+			},
+			"response": []
+		}
+	]
+}
