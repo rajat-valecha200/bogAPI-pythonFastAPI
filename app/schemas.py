@@ -19,6 +19,7 @@ class PostCreate(BaseModel):
     title: str
     content: str
     published: Optional[bool] = True
+    image: Optional[str] = None
 
 class PostOut(PostCreate):
     id: int
