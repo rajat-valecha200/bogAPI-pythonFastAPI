@@ -6,3 +6,5 @@ psycopg2-binary
 passlib[bcrypt]
 python-jose[cryptography]
 python-dotenv
+pydantic[email]
+bcrypt==3.2.0

@@ -11,7 +11,7 @@ router = APIRouter(
 
 @router.post("/register", response_model=schemas.UserOut)
 def register(user: schemas.UserCreate, db: Session = Depends(database.get_db)):
-    existing_user = db.query(models.Users).filter(models.User.email == user.email)
+    existing_user = db.query(models.User).filter(models.User.email == user.email).first()
     if existing_user :
         raise HTTPException(status_code=400, detail="Email already registered")
     hashed = hash_password(user.password)
