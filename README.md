@@ -75,7 +75,7 @@ uvicorn app.main:app --reload
 
 ### 5. API Docs
 
-Visit: [http://localhost:8000/docs](http://localhost:8000/docs)
+Visit: [http://localhost:8000/](http://localhost:8000/)
 
 ---
 
